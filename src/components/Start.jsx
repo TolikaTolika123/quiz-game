@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { GameContext } from '../context'
+import questions from '../questions'
 
 const Start = () => {
   const {setGameStatus} = useContext(GameContext)
@@ -7,7 +8,7 @@ const Start = () => {
     <div className='start__menu'>
       <h1 className='start__title'>Welcome to JavaScript quiz game</h1>
       <p className='start__desc'>
-        You will be asked five questions with possible answers, at the end you
+        You will be asked {questions.length} questions with possible answers, at the end you
         will know how much you answered correctly
       </p>
       <button className='start__btn' type="button" onClick={() => setGameStatus('progress')}>Start game!</button>

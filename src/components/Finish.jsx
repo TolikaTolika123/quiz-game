@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { GameContext } from "../context";
 
 const Finish = () => {
-  return (
-    <div>Finish</div>
-  )
-}
+  const { score, setScore, maxScore, setGameStatus } = useContext(GameContext);
 
-export default Finish
+  function startAgain() {
+    setScore(0);
+    setGameStatus('progress')
+  }
+  return (
+    <div className="finish menu">
+      <h1>
+        Congratulations you scored {score} of {maxScore}
+      </h1>
+      <button onClick={startAgain}>Start Again</button>
+    </div>
+  );
+};
+
+export default Finish;

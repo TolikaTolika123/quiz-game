@@ -9,6 +9,8 @@ import Finish from "./components/Finish";
 function App() {
   const [gameStatus, setGameStatus] = useState("start");
   const [questionCount, setQuestionCount] = useState(1);
+  const [score, setScore] = useState(0)
+  const maxScore = 100;
 
   function renderSwitch(param) {
     switch (param) {
@@ -22,7 +24,7 @@ function App() {
   }
   return (
     <GameContext.Provider
-      value={{ gameStatus, setGameStatus, questionCount, setQuestionCount }}
+      value={{ gameStatus, setGameStatus, questionCount, setQuestionCount, score, setScore, maxScore }}
     >
       <div className="App">
         <div className="game__container">
