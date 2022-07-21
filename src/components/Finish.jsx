@@ -9,11 +9,11 @@ const Finish = () => {
     setGameStatus('progress')
   }
   return (
-    <div className="finish menu">
+    <div className="finish__menu">
       <h1>
         Congratulations you scored {score} of {maxScore}
       </h1>
-      <button onClick={startAgain}>Start Again</button>
+      <button className="finish__btn" onClick={startAgain}>Start Again</button>
     </div>
   );
 };

@@ -32,9 +32,10 @@ const GameField = () => {
     <div className="game__field">
       <p className="game__suptitle">Question {questionCount} of {questions.length}</p>
       <h2 className="game__title">{question.question}</h2>
-      <form className="game__answers" onSubmit={submitAnswer}>
+      <form className="game__form" onSubmit={submitAnswer}>
+        <ul className="game__answers">
         {Object.entries(question.answers).map((answer) => (
-          <div key={answer[0]} className="game__answer">
+          <li key={answer[0]} className="game__answer">
             <input
               type="radio"
               id={answer[0]}
@@ -43,9 +44,10 @@ const GameField = () => {
               onChange={e => setCurrentGuess(answer[0])}
             />
             <label htmlFor={answer[0]}>{answer[1]}</label>
-          </div>
+          </li>
         ))}
-        <button>Submit answer!</button>
+        </ul>
+        <button className="game__btn">Submit answer!</button>
       </form>
     </div>
   );
